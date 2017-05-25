@@ -255,8 +255,13 @@ var gcd = function(x, y) {
 var compareStr = function(str1, str2) {
   // if (str1 === str2) return true;
   // return false;
-
-  
+  if (str1.length === 0 && str2.length === 0) {
+      return true;
+  } else if (str1.charAt(0) === str2.charAt(0)) {
+    return compareStr(str1.slice(1), str2.slice(1));
+  } else {
+    return false;
+  }
 };
 
 // 16. Write a function that accepts a string and creates an array where each letter
